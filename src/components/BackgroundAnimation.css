@@ -1,0 +1,77 @@
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(125deg, 
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(99, 102, 241, 0.1) 100%
+  );
+}
+
+.gradient-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.gradient-layer-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+  top: -50%;
+  left: -50%;
+  animation-delay: 0s;
+}
+
+.gradient-layer-2 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  bottom: -50%;
+  right: -50%;
+  animation-delay: -7s;
+}
+
+.gradient-layer-3 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  top: -30%;
+  right: -30%;
+  animation-delay: -14s;
+}
+
+.noise-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(5%, 5%) rotate(120deg);
+  }
+  66% {
+    transform: translate(-5%, -5%) rotate(240deg);
+  }
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(125deg, 
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(139, 92, 246, 0.05) 50%,
+    rgba(99, 102, 241, 0.05) 100%
+  );
+}

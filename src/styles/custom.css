@@ -1,0 +1,87 @@
+/* Animations globales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles des sections */
+section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Styles des cartes */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Styles du carrousel */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: white !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  .navbar-custom .container {
+    padding: 10px 15px;
+  }
+}
+
+/* Styles du footer */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  color: white;
+  padding: 60px 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #8b5cf6;
+}
+
+/* Styles des boutons */
+.btn-gradient {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  color: white;
+}
