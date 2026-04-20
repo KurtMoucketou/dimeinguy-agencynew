@@ -22,7 +22,6 @@ const NavigationBar = ({ theme, toggleTheme }) => {
     { to: '/services', label: 'Services' },
     { to: '/solutions-ia', label: 'Solutions IA' },
     { to: '/realisations', label: 'Réalisations' },
-    { to: '/blog', label: 'Blog' },
     { to: '/offres', label: 'Offres' },
     { to: '/contact', label: 'Contact' },
   ]
@@ -66,7 +65,7 @@ const NavigationBar = ({ theme, toggleTheme }) => {
                 to={link.to}
                 className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
                 style={{
-                  color: theme === 'light' ? '#1a1a1a' : '#ffffff',
+                  color: theme === 'light' ? '#1a1a1a' : '#dcdcdf',
                   margin: '0 10px',
                   fontWeight: '500'
                 }}
