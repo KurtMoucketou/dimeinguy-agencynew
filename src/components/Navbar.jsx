@@ -41,15 +41,8 @@ const NavigationBar = ({ theme, toggleTheme }) => {
       }}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/" className="brand">
-          <h3 style={{ 
-            background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontWeight: 'bold'
-          }}>
-            DIMEINGUY AGENCY
-          </h3>
+        <Navbar.Brand as={Link} to="/" className="brand w-25">
+          <img src='/Logo.png' alt='Logo-DIMEINGUY-AGENCY' className='w-50'/>
         </Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav">
