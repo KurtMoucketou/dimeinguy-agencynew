@@ -4,6 +4,7 @@ import { FaExternalLinkAlt, FaSearch } from 'react-icons/fa'
 
 const Realisations = () => {
   const [filter, setFilter] = useState('all')
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const projects = [
     {
@@ -12,9 +13,10 @@ const Realisations = () => {
       category: "web",
       type: "Création web",
       description: "Plateforme e-commerce complète avec paiement intégré",
-      image: "🛒",
+      image: "/Logo.png",
       client: "TechStore",
-      technologies: ["React", "Node.js", "MongoDB"]
+      technologies: ["React", "Node.js", "MongoDB"],
+      link: "#"
     },
     {
       id: 2,
@@ -22,9 +24,10 @@ const Realisations = () => {
       category: "branding",
       type: "Branding",
       description: "Branding complet pour startup éco-responsable",
-      image: "🌿",
+      image: "/africommerce-consulting.PNG",
       client: "GreenLife",
-      technologies: ["Logo", "Charte graphique", "Packaging"]
+      technologies: ["Logo", "Charte graphique", "Packaging"],
+      link: "#"
     },
     {
       id: 3,
@@ -32,9 +35,10 @@ const Realisations = () => {
       category: "marketing",
       type: "Marketing digital",
       description: "Campagne d'influence +100K de reach",
-      image: "📱",
+      image: "/amak-electricite.png",
       client: "ModeX",
-      technologies: ["Social Media", "Influence", "Content"]
+      technologies: ["Social Media", "Influence", "Content"],
+      link: "#"
     },
     {
       id: 4,
@@ -42,33 +46,102 @@ const Realisations = () => {
       category: "ia",
       type: "Solutions IA",
       description: "Assistant virtuel pour service client bancaire",
-      image: "🤖",
+      image: "/sopri.PNG",
       client: "BankAssist",
-      technologies: ["NLP", "OpenAI", "WhatsApp API"]
+      technologies: ["NLP", "OpenAI", "WhatsApp API"],
+      link: "#"
     },
     {
       id: 5,
       title: "Application Mobile FitCoach",
       category: "web",
-      type: "Création web",
+      type: "Application mobile",
       description: "Application fitness avec suivi personnalisé",
-      image: "💪",
+      image: "/Logo.png",
       client: "FitCoach",
-      technologies: ["React Native", "Firebase"]
+      technologies: ["React Native", "Firebase"],
+      link: "#"
     },
     {
       id: 6,
       title: "Site Vitrine Hôtel Luxe",
       category: "web",
-      type: "Création web",
+      type: "Site vitrine",
       description: "Site responsive avec réservation en ligne",
-      image: "🏨",
+      image: "/Logo.png",
       client: "Hôtel Luxe",
-      technologies: ["WordPress", "PHP", "MySQL"]
+      technologies: ["WordPress", "PHP", "MySQL"],
+      link: "#"
     }
   ]
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter)
+
+  // Modal pour les détails
+  const ProjectModal = ({ project, onClose }) => {
+    if (!project) return null
+
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.8)',
+        zIndex: 1000,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '20px'
+      }} onClick={onClose}>
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '15px',
+          maxWidth: '800px',
+          width: '100%',
+          maxHeight: '90vh',
+          overflow: 'auto'
+        }} onClick={e => e.stopPropagation()}>
+          <div style={{ position: 'relative' }}>
+            <img 
+              src={project.image} 
+              alt={project.title}
+              style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '15px 15px 0 0' }}
+            />
+            <button
+              onClick={onClose}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                background: 'rgba(0,0,0,0.5)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '50%',
+                width: '30px',
+                height: '30px',
+                cursor: 'pointer'
+              }}
+            >
+              ✕
+            </button>
+          </div>
+          <div style={{ padding: '20px' }}>
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
+            <h4>Client: {project.client}</h4>
+            <h4>Technologies:</h4>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {project.technologies.map((tech, idx) => (
+                <Badge key={idx} style={{ backgroundColor: '#6366f1' }}>{tech}</Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -123,13 +196,27 @@ const Realisations = () => {
               }}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                {/* Image - La correction est ici */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #667eea20 0%, #764ba220 100%)',
-                  padding: '40px',
-                  textAlign: 'center',
-                  fontSize: '4rem'
+                  height: '200px',
+                  overflow: 'hidden',
+                  backgroundColor: '#f8f9fa'
                 }}>
-                  {project.image}
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'fill', // 'contain' pour voir l'image entière
+                      padding: '20px'
+                    }}
+                    onError={(e) => {
+                      console.error('Erreur chargement image:', project.image)
+                      e.target.style.display = 'none'
+                      e.target.parentElement.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">🏢</div>'
+                    }}
+                  />
                 </div>
                 <Card.Body>
                   <Badge style={{ backgroundColor: '#6366f1', marginBottom: '10px' }}>
@@ -146,7 +233,7 @@ const Realisations = () => {
                   </div>
                   <div style={{ marginTop: '15px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                     {project.technologies.map((tech, idx) => (
-                      <Badge key={idx} variant="secondary" style={{ backgroundColor: '#e9ecef', color: '#495057' }}>
+                      <Badge key={idx} style={{ backgroundColor: '#e9ecef', color: '#495057', padding: '5px 10px' }}>
                         {tech}
                       </Badge>
                     ))}
@@ -154,6 +241,7 @@ const Realisations = () => {
                   <Button 
                     variant="link" 
                     style={{ color: '#6366f1', marginTop: '15px', padding: 0 }}
+                    onClick={() => setSelectedProject(project)}
                   >
                     Voir l'étude de cas <FaExternalLinkAlt style={{ marginLeft: '5px', fontSize: '12px' }} />
                   </Button>
@@ -163,6 +251,14 @@ const Realisations = () => {
           ))}
         </Row>
       </Container>
+
+      {/* Modal */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+        />
+      )}
     </>
   )
 }

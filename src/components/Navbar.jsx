@@ -20,7 +20,7 @@ const NavigationBar = ({ theme, toggleTheme }) => {
     { to: '/', label: 'Accueil' },
     { to: '/about', label: 'À propos' },
     { to: '/services', label: 'Services' },
-    { to: '/solutions-ia', label: 'Solutions IA' },
+    {/* { to: '/solutions-ia', label: 'Solutions IA' }, */},    
     { to: '/realisations', label: 'Réalisations' },
     { to: '/offres', label: 'Offres' },
     { to: '/contact', label: 'Contact' },
@@ -42,7 +42,7 @@ const NavigationBar = ({ theme, toggleTheme }) => {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand w-25">
-          <img src='/Logo.png' alt='Logo-DIMEINGUY-AGENCY' className='w-50'/>
+          <img src='/Logo.png' alt='Logo-DIMEINGUY-AGENCY' style={{ height: '40px', width: 'auto' }} />
         </Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav">

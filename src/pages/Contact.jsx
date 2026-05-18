@@ -69,8 +69,8 @@ const Contact = () => {
                   <FaWhatsapp size={24} color="#25D366" />
                   <span style={{ marginLeft: '10px', fontWeight: 'bold' }}>WhatsApp Business</span>
                 </div>
-                <a href="https://wa.me/212600000000" style={{ color: '#25D366', textDecoration: 'none' }}>
-                  +212 600 000 000
+                <a href="https://wa.me/212682583649" style={{ color: '#25D366', textDecoration: 'none' }}>
+                  +212 6 82 58 36 49
                 </a>
               </div>
 
@@ -89,8 +89,8 @@ const Contact = () => {
                   <FaPhone size={24} color="#6366f1" />
                   <span style={{ marginLeft: '10px', fontWeight: 'bold' }}>Téléphone</span>
                 </div>
-                <a href="tel:+212522000000" style={{ color: '#333', textDecoration: 'none' }}>
-                  +212 522 000 000
+                <a href="tel:+212682583649" style={{ color: '#333', textDecoration: 'none' }}>
+                  +212 6 82 58 36 49
                 </a>
               </div>
 
@@ -111,7 +111,7 @@ const Contact = () => {
                   <span style={{ marginLeft: '10px', fontWeight: 'bold' }}>Horaires</span>
                 </div>
                 <p style={{ margin: 0, color: '#666' }}>
-                  Lundi - Vendredi: 9h - 18h<br />
+                  Lundi - Vendredi: 9h30 - 18h<br />
                   Samedi: 10h - 14h
                 </p>
               </div>

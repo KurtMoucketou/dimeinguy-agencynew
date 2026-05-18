@@ -54,7 +54,7 @@ const Footer = () => {
               📧 <a href="mailto:contact@dimeinguy.com" style={{ color: '#aaa', textDecoration: 'none' }}>contact@dimeinguy.com</a>
             </p>
             <p style={{ color: '#aaa', marginBottom: '10px' }}>
-              📞 <a href="tel:+212522000000" style={{ color: '#aaa', textDecoration: 'none' }}>+212 522 000 000</a>
+              📞 <a href="tel:+212 6 82 58 36 49" style={{ color: '#aaa', textDecoration: 'none' }}>+212 6 82 58 36 49</a>
             </p>
             <p style={{ color: '#aaa', marginBottom: '10px' }}>
               📍 Casablanca, Maroc
@@ -67,7 +67,7 @@ const Footer = () => {
         <Row>
           <Col className="text-center">
             <p style={{ margin: 0, color: '#888' }}>
-              &copy; 2024 DIMEINGUY AGENCY - Tous droits réservés
+              &copy; 2026 DIMEINGUY AGENCY - Tous droits réservés
             </p>
           </Col>
         </Row>

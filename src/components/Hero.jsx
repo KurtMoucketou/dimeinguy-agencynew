@@ -71,10 +71,10 @@ const Hero = () => {
                     <Button 
                       variant="light" 
                       size="lg" 
-                      className="me-3"
+                      className="me-2 mb-1"
                       style={{
                         borderRadius: '50px',
-                        padding: '12px 30px',
+                        padding: '12px 20px',
                         fontWeight: '600'
                       }}
                     >
